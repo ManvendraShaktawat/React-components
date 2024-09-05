@@ -7,11 +7,12 @@ import InfiniteScroll from "./components/Infinite scroll/myApp.js";
 import SearchableDropdown from "./components/Searchable dropdown/myApp.js";
 import TodoList from "./components/TodoList/myApp.js";
 import BookMyShow from "./components/BookMyShow/myApp.js";
+import SnakesAndLadder from "./components/SnakesAndLadder/myApp.js";
 
 function App() {
   return (
     <div>
-      <BookMyShow />
+      <SnakesAndLadder />
     </div>
   );
 }

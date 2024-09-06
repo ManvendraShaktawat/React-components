@@ -1,15 +1,13 @@
 import React from "react";
 import styles from "./myApp.module.css";
 
-function Grid({ rows, columns, numberOfSeats }) {
-  const [grid, setGrid] = React.useState(
-    Array(rows).fill(Array(columns).fill(false))
-  );
+function Grid({ gridData, numberOfSeats }) {
+  const [grid, setGrid] = React.useState(gridData);
 
   function updateSelection(i, j) {
     let startRow = i,
       startColumn = j;
-    if (j > rows - numberOfSeats) {
+    if (j > grid.length - numberOfSeats) {
       startRow = i + 1;
       startColumn = 0;
     }
@@ -30,21 +28,17 @@ function Grid({ rows, columns, numberOfSeats }) {
 
   return (
     <div>
-      {Array(rows)
-        .fill()
-        .map((row, i) => (
-          <div className={styles.row} key={i}>
-            {Array(columns)
-              .fill()
-              .map((column, j) => (
-                <div
-                  key={j}
-                  className={`${styles.box} ${grid[i][j] && styles.selected}`}
-                  onClick={() => updateSelection(i, j)}
-                />
-              ))}
-          </div>
-        ))}
+      {grid.map((row, i) => (
+        <div className={styles.row} key={i}>
+          {grid[i].map((column, j) => (
+            <div
+              key={j}
+              className={`${styles.box} ${grid[i][j] && styles.selected}`}
+              onClick={() => updateSelection(i, j)}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 }

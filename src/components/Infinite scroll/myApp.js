@@ -23,7 +23,7 @@ function MyApp() {
 
   function handleScroll(e) {
     const { scrollHeight, scrollTop, clientHeight } = e.target;
-    const bottom = scrollHeight - scrollTop === clientHeight;
+    const bottom = clientHeight + scrollTop === scrollHeight;
     if (bottom) {
       getCountries();
     }

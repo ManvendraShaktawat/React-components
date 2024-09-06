@@ -14,7 +14,6 @@ function MyApp() {
   }, []);
 
   function filterCountries(e) {
-    console.log("called");
     const searchText = e.target.value.toLowerCase();
     if (!searchText.length) {
       setFilteredCountries([]);
@@ -33,7 +32,7 @@ function MyApp() {
       if (timer) {
         clearTimeout(timer);
       }
-      timer = setTimeout(() => fn.apply(null, args), timeout);
+      timer = setTimeout(() => fn(...args), timeout);
     };
   }
 

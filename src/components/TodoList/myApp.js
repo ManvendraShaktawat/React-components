@@ -37,6 +37,7 @@ function MyApp() {
     setTodos(newTodos);
     todoInputRef.current.value = "";
     todoInputRef.current.focus();
+    // ToDo: the below statement can be moved to componentWillUnmount
     localStorage.setItem("todos", JSON.stringify(newTodos));
   }
 

@@ -8,11 +8,16 @@ import SearchableDropdown from "./components/Searchable dropdown/myApp.js";
 import TodoList from "./components/TodoList/myApp.js";
 import BookMyShow from "./components/BookMyShow/myApp.js";
 import SnakesAndLadder from "./components/SnakesAndLadder/myApp.js";
+import TreeFileSystem from "./components/Tree File system/myApp.js";
+import InsertionSortVisualisation from "./components/InsertionSort visualisation/myApp.js";
+import Minesweeper from "./components/Minesweeper/myApp.js";
+import FlipCard from "./components/Flip card/myApp.js";
+import Calendar from "./components/Calendar/myApp.js";
 
 function App() {
   return (
     <div>
-      <SnakesAndLadder />
+      <Minesweeper />
     </div>
   );
 }

@@ -8,13 +8,15 @@ function MyApp() {
   const [countries, setCountries] = React.useState([]);
   const [startIndex, setStartIndex] = React.useState(0);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [hasMore, setHasMore] = React.useState(true);
 
   React.useEffect(getCountries, []);
 
   function getCountries() {
     setIsLoading(true);
     getPaginatedCountries(startIndex, LIMIT).then((data) => {
-      const newList = [...countries, ...data];
+      const newList = [...countries, ...data.countries];
+      setHasMore(data.hasMore);
       setCountries(newList);
       setIsLoading(false);
       setStartIndex(startIndex + LIMIT);
@@ -23,8 +25,10 @@ function MyApp() {
 
   function handleScroll(e) {
     const { scrollHeight, scrollTop, clientHeight } = e.target;
-    const bottom = clientHeight + scrollTop === scrollHeight;
-    if (bottom) {
+    // Load more items when scroll nears the bottom (90% of the scrollable height)
+    const isApproachingBottom = scrollTop + clientHeight >= scrollHeight * 0.9;
+    // No API call while loading is in progress or hasMore is false
+    if (isApproachingBottom && hasMore && !isLoading) {
       getCountries();
     }
   }

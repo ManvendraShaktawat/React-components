@@ -194,7 +194,10 @@ const countries = [
 export function getPaginatedCountries(index, limit) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(countries.slice(index, index + limit));
+      resolve({
+        countries: countries.slice(index, index + limit),
+        hasMore: index < countries.length - 1,
+      });
     }, [500]);
   });
 }

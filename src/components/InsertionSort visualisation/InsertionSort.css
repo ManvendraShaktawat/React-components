@@ -1,0 +1,40 @@
+.array-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.array-bar {
+  width: 30px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.current {
+  background-color: #e74c3c; /* Red for the current element being sorted */
+}
+
+.next {
+  background-color: #f39c12; /* Orange for the element being compared */
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

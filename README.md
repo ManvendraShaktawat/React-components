@@ -1,3 +1,25 @@
+<!--
+    - CRA has Webpack setup by default, and all the configurations are abstracted
+    - we have run 'npm run eject' to expose all the hidden Webpack configurations, so that we can play around
+
+    - React CRA has the below dependencies installed by default:
+        - Webpack, webpack-dev-server
+        - Babel, css-loader, sass-loader, style-loader, file-loader
+        - eslint
+        - minification, tree shaking
+        - Jest + RTL
+        - source-map
+        - tailwindcss, postcss
+
+    - WebpackDevServer is used by default as a development server in a CRA app
+        - It provides HMR - hot module replacement, no need to refresh app
+        - It preserves the state as well during HMR
+        - It serves the bundled modules directly from the memory (avoid writing files to disk), so that the changes can be updated faster
+        - Because of its efficiency, it is preferred over an express server
+        - Node.js/Express server focuses on backend API logic and production builds
+        - In production (npm run build), CRA uses Webpack to create an optimized bundle that can be served by any static server, like nginx, Apache, Express.
+ -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
